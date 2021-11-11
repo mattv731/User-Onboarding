@@ -1,6 +1,11 @@
 import React from 'react';
 
 const Form = (props) => {
+
+    const { onChange, submit } = props;
+    const { username, email, password, terms } = props.values;
+
+
     return (
         <div>     
            <h1>
@@ -31,7 +36,14 @@ const Form = (props) => {
                    onChange={onChange}
                    />
                </label>
-               <label></label>
+               <label>Terms of Service
+                   <input
+                    type="checkbox"
+                    name="terms"
+                    checked={checked}
+                    onChange={onChanged}
+                    />
+               </label>
            </form>
         </div>
     )
