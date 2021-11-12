@@ -56,10 +56,6 @@ describe('Quotes App', () => {
             .should('not.be.checked')
             .check()
             .should('be.checked')
-            .check()
-            .should('not.be.checked')
-            // .click()
-            // .should('have.value', 'true')
 
         })
         it('the submit button should submit', () => {
@@ -67,6 +63,9 @@ describe('Quotes App', () => {
             email().type('Matt@abbey.com');
             password().type('asdfasdf');
             tos().check();
+            submit().click();
+            cy.contains('Matt@abbey.com');
+
         })
     })
 })
